@@ -1,8 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/register.svg";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../context/AuthProvider";
+import { toast } from "react-hot-toast";
+
 const Register = () => {
+  const { createUser, updateName, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+
+    createUser(email, password)
+      .then((res) => {
+        updateName(res.user, name, photo)
+          .then()
+          .catch((err) => console.log(err));
+        toast.success("Registation successful");
+        logOut();
+        navigate("/login");
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="hero mb-24 ">
       <div className="hero-content flex-col lg:flex-row-reverse gap-40">
@@ -12,7 +37,7 @@ const Register = () => {
         <div className="card flex-shrink-0 w-full max-w-sm  border-2 bg-base-100">
           <div className="card-body">
             <h1 className="text-3xl font-bold text-center mb-2">Sign Up!</h1>
-            <form>
+            <form onSubmit={handleRegister}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>

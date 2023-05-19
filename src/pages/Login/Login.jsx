@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import img from "../../assets/login.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../context/AuthProvider";
+import { toast } from "react-hot-toast";
 const Login = () => {
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    login(email, password)
+      .then((res) => {
+        console.log(res.user);
+        toast.success("Login Successful");
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="hero mb-24 mt-5 ">
       <div className="hero-content flex-col lg:flex-row gap-20">
@@ -12,7 +29,7 @@ const Login = () => {
         <div className="card flex-shrink-0 w-full max-w-sm  border-2 bg-base-100">
           <div className="card-body">
             <h1 className="text-3xl font-bold text-center mb-5">Login now!</h1>
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
