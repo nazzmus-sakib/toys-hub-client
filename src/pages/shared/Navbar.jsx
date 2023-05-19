@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.webp";
 import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../../context/AuthProvider";
 const Navbar = () => {
-  const navItem = (
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((err) => console.log(err));
+  };
+  const navItems = (
     <>
       <li>
         <Link>Home</Link>
@@ -16,23 +24,26 @@ const Navbar = () => {
         <Link>Blog</Link>
       </li>
 
-      <>
+      {user ? (
+        <>
+          <li>
+            <Link>My Toys</Link>
+          </li>
+          <li>
+            <Link>Add a toy</Link>
+          </li>
+          <li>
+            <Link onClick={handleLogout}>Logout</Link>
+          </li>
+        </>
+      ) : (
         <li>
-          <Link>My Toys</Link>
+          <Link to="/login">Login</Link>
         </li>
-        <li>
-          <Link>Add a toy</Link>
-        </li>
-        <li>
-          <Link>Logout</Link>
-        </li>
-      </>
-
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
+      )}
     </>
   );
+
   return (
     <div className="navbar bg-base-100 z-10 mb-10 shadow-lg px-5 py-3 sticky top-0 ">
       <div className="navbar-start">
@@ -57,19 +68,32 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            {navItem}
+            {navItems}
           </ul>
         </div>
         <Link className="btn btn-ghost normal-case items-center h-24" to="/">
           <img src={logo} className="h-20" />
-          <h2 className="text-3xl font-bold ml-4">Toys Hub</h2>
+          <h2 className="text-3xl font-bold lg:ml-4 ml-2">Toys Hub</h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex items-center">
-        <ul className="menu menu-horizontal px-1">{navItem}</ul>
+        <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <FaUserCircle className="lg:text-5xl text-4xl"></FaUserCircle>
+        {user?.photoURL ? (
+          <div
+            className="tooltip tooltip-left lg:tooltip-bottom tooltip-warning mr-5"
+            data-tip={user?.displayName}
+          >
+            <div className="avatar online ">
+              <div className="w-12 rounded-full ">
+                <img src={user?.photoURL} />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <FaUserCircle className="lg:text-5xl text-4xl"></FaUserCircle>
+        )}
       </div>
     </div>
   );
