@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
@@ -19,6 +19,13 @@ const Login = () => {
         navigate("/");
       })
       .catch((err) => console.log(err));
+  };
+  const handleGoogleLogin = () => {
+    googleLogin().then((res) => {
+      console.log(res.user);
+      toast.success("Login success");
+      navigate("/");
+    });
   };
   return (
     <div className="hero mb-24 mt-5 ">
@@ -68,7 +75,10 @@ const Login = () => {
             <div>
               <p className="text-center mt-3 text-md">Or Login with</p>
               <div className="flex justify-center gap-5 mt-4">
-                <FcGoogle className="text-2xl"></FcGoogle>
+                <FcGoogle
+                  className="text-2xl cursor-pointer"
+                  onClick={handleGoogleLogin}
+                ></FcGoogle>
               </div>
               <p className="text-center mt-5 text-sm">
                 New to toys Hub?{" "}

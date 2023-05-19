@@ -6,7 +6,8 @@ import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
 
 const Register = () => {
-  const { createUser, updateName, logOut } = useContext(AuthContext);
+  const { createUser, updateName, logOut, googleLogin } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const handleRegister = (event) => {
     event.preventDefault();
@@ -27,7 +28,13 @@ const Register = () => {
       })
       .catch((err) => console.log(err));
   };
-
+  const handleGoogleLogin = () => {
+    googleLogin().then((res) => {
+      console.log(res.user);
+      toast.success("Login success");
+      navigate("/");
+    });
+  };
   return (
     <div className="hero mb-24 ">
       <div className="hero-content flex-col lg:flex-row-reverse gap-40">
@@ -94,7 +101,10 @@ const Register = () => {
             </form>
             <p className="text-center mt-3 text-md">Or Sign Up with</p>
             <div className="flex justify-center gap-5 mt-4">
-              <FcGoogle className="text-2xl"></FcGoogle>
+              <FcGoogle
+                className="text-2xl cursor-pointer"
+                onClick={handleGoogleLogin}
+              ></FcGoogle>
             </div>
             <p className="text-center mt-5 text-sm">
               Already have an account?
