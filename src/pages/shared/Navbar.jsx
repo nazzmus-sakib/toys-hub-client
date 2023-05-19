@@ -18,10 +18,10 @@ const Navbar = () => {
 
       <>
         <li>
-          <Link to="/bookings">My Toys</Link>
+          <Link>My Toys</Link>
         </li>
         <li>
-          <Link to="/bookings">Add a toy</Link>
+          <Link>Add a toy</Link>
         </li>
         <li>
           <Link>Logout</Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100  mb-10 shadow-lg px-5 py-3 sticky top-0 ">
+    <div className="navbar bg-base-100 z-10 mb-10 shadow-lg px-5 py-3 sticky top-0 ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
