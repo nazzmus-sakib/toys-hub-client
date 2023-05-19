@@ -45,7 +45,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 z-10 mb-10 shadow-lg px-5 py-3 sticky top-0 ">
+    <div className="navbar bg-base-100 z-10  shadow-lg px-5 py-3 sticky top-0 ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -82,7 +82,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {user?.photoURL ? (
           <div
-            className="tooltip tooltip-left lg:tooltip-bottom tooltip-warning mr-5"
+            className="tooltip lg:tooltip-bottom tooltip-warning mr-5"
             data-tip={user?.displayName}
           >
             <div className="avatar online ">
