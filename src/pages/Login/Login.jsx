@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import img from "../../assets/login.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
 const Login = () => {
   const { login, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  let from = location.state?.from?.pathname || "/";
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -16,7 +19,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         toast.success("Login Successful");
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((err) => console.log(err));
   };

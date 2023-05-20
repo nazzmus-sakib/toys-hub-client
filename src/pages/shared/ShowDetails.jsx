@@ -3,7 +3,6 @@ import { AuthContext } from "../../context/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 
 const ShowDetails = () => {
-  const { user } = useContext(AuthContext);
   const {
     price,
     rating,

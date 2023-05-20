@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Rating from "react-rating";
 import { FaArrowRight, FaRegStar, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider";
+import { toast } from "react-hot-toast";
 const ShopByCategory = () => {
+  const { user } = useContext(AuthContext);
   const [activeTab, setActiveTab] = useState("teddy-bear");
   const [categoryData, setCategoryData] = useState([]);
   useEffect(() => {
@@ -11,7 +14,9 @@ const ShopByCategory = () => {
       .then((data) => setCategoryData(data));
   }, [activeTab]);
   const handleShowDetails = (id) => {
-    console.log(id);
+    if (!user) {
+      toast.error("You have to log in first to view details");
+    }
   };
   return (
     <div>

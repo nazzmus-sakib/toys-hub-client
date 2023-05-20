@@ -7,6 +7,7 @@ import Banner from "../pages/home/Banner";
 import Home from "../pages/home/Home";
 import AddToy from "../pages/add toy/AddToy";
 import ShowDetails from "../pages/shared/ShowDetails";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <ShowDetails></ShowDetails>,
+        element: (
+          <PrivetRoutes>
+            <ShowDetails></ShowDetails>
+          </PrivetRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/details/${params.id}`),
       },
