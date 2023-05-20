@@ -30,7 +30,7 @@ const Navbar = () => {
             <Link>My Toys</Link>
           </li>
           <li>
-            <Link>Add a toy</Link>
+            <Link to="/add-toy">Add a toy</Link>
           </li>
           <li>
             <Link onClick={handleLogout}>Logout</Link>
