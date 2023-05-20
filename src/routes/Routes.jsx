@@ -6,6 +6,7 @@ import Register from "../pages/register/Register";
 import Banner from "../pages/home/Banner";
 import Home from "../pages/home/Home";
 import AddToy from "../pages/add toy/AddToy";
+import ShowDetails from "../pages/shared/ShowDetails";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
       {
         path: "add-toy",
         element: <AddToy></AddToy>,
+      },
+      {
+        path: "/details/:id",
+        element: <ShowDetails></ShowDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/details/${params.id}`),
       },
     ],
   },

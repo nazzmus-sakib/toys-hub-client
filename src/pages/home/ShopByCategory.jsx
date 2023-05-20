@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { FaArrowRight, FaRegStar, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const ShopByCategory = () => {
   const [activeTab, setActiveTab] = useState("teddy-bear");
   const [categoryData, setCategoryData] = useState([]);
@@ -82,12 +83,14 @@ const ShopByCategory = () => {
 
                 <div className="flex  items-center justify-between pt-3 mt-auto">
                   <FaArrowRight className="text-red-500 text-xl "></FaArrowRight>
-                  <button
-                    className="btn btn-xs"
-                    onClick={() => handleShowDetails(_id)}
-                  >
-                    View Details
-                  </button>
+                  <Link to={`/details/${_id}`}>
+                    <button
+                      className="btn btn-xs"
+                      onClick={() => handleShowDetails(_id)}
+                    >
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
