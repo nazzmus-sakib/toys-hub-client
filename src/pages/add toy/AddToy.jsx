@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
-
+import Swal from "sweetalert2";
 const AddToy = () => {
   const { user } = useContext(AuthContext);
   const handleSubmit = (event) => {
@@ -26,7 +26,25 @@ const AddToy = () => {
       quantity,
       description,
     };
-    console.log(toysInfo);
+    fetch("http://localhost:3000/toys-info", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toysInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          form.reset();
+          Swal.fire({
+            title: "Great!",
+            text: "Toy has been successfully added",
+            icon: "success",
+            confirmButtonText: "ok",
+          });
+        }
+      });
   };
   return (
     <form class="px-28 py-16" onSubmit={handleSubmit}>
@@ -129,7 +147,7 @@ const AddToy = () => {
       </div>
       <div class="form-control mt-4">
         <button class="btn btn-primary" type="submit">
-          Login
+          Add toy
         </button>
       </div>
     </form>
