@@ -8,6 +8,7 @@ import Home from "../pages/home/Home";
 import AddToy from "../pages/add toy/AddToy";
 import ShowDetails from "../pages/shared/ShowDetails";
 import PrivetRoutes from "./PrivetRoutes";
+import AllToys from "../pages/all-toys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "add-toy",
-        element: <AddToy></AddToy>,
+        element: (
+          <PrivetRoutes>
+            <AddToy></AddToy>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "/details/:id",
@@ -38,7 +43,11 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/details/${params.id}`),
+          fetch(`https://toys-hub-server.vercel.app/details/${params.id}`),
+      },
+      {
+        path: "/all-toys",
+        element: <AllToys></AllToys>,
       },
     ],
   },

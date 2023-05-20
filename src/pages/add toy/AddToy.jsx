@@ -26,7 +26,7 @@ const AddToy = () => {
       quantity,
       description,
     };
-    fetch("http://localhost:3000/toys-info", {
+    fetch("https://toys-hub-server.vercel.app/toys-info", {
       method: "POST",
       headers: {
         "content-type": "application/json",
