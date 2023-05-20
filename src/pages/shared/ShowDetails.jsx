@@ -15,7 +15,7 @@ const ShowDetails = () => {
   } = useLoaderData();
 
   return (
-    <div className="card card-side bg-base-100 mt-14">
+    <div className="card card-side bg-base-100 my-14">
       <figure className="1/2">
         <img src={photo} alt="img" className="h-[400px] w-full rounded" />
       </figure>
