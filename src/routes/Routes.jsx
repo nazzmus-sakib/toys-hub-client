@@ -43,7 +43,7 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`https://toys-hub-server.vercel.app/details/${params.id}`),
+          fetch(`http://localhost:3000/details/${params.id}`),
       },
       {
         path: "/all-toys",

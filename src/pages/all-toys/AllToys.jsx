@@ -5,18 +5,18 @@ const AllToys = () => {
   const [toysData, setToysData] = useState([]);
   const [searchText, setSearchText] = useState(null);
   useEffect(() => {
-    fetch("https://toys-hub-server.vercel.app/all-toys")
+    fetch("http://localhost:3000/all-toys")
       .then((res) => res.json())
       .then((data) => setToysData(data));
   }, []);
   const handleChange = (event) => {
     setSearchText(event.target.value);
   };
-  // const handleSearch = () => {
-  //   fetch(`https://toys-hub-server.vercel.app/searchByToyName/${searchText}`)
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // };
+  const handleSearch = () => {
+    fetch(`http://localhost:3000/searchByToyName/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => setToysData(data));
+  };
   return (
     <div className="my-20">
       <div className="flex justify-center gap-2 mb-10">
@@ -28,7 +28,7 @@ const AllToys = () => {
         />
         <button
           className="btn btn-outline btn-primary text-center"
-          // onClick={handleSearch}
+          onClick={handleSearch}
         >
           Search
         </button>
