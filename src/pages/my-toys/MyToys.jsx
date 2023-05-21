@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import UpdateToys from "./UpdateToys";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -15,6 +16,31 @@ const MyToys = () => {
         setMyToys(data);
       });
   }, []);
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/delete-toy/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount === 1) {
+              Swal.fire("Deleted!", "Your toy has been deleted.", "success");
+              const remaining = myToys.filter((toy) => toy._id !== id);
+              setMyToys(remaining);
+            }
+          });
+      }
+    });
+  };
   return (
     <div className="my-20">
       <div className="overflow-x-auto ">
@@ -58,7 +84,12 @@ const MyToys = () => {
                     </Link>
 
                     <Link>
-                      <button className="btn btn-xs">Delete</button>
+                      <button
+                        className="btn btn-xs"
+                        onClick={() => handleDelete(_id)}
+                      >
+                        Delete
+                      </button>
                     </Link>
                   </td>
                 </tr>
