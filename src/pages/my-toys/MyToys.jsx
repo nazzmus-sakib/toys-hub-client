@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import UpdateToys from "./UpdateToys";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -22,29 +23,42 @@ const MyToys = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Seller Name</th>
+
               <th>Toy Name</th>
               <th>Sub-category</th>
               <th>Price</th>
               <th>Available Quantity</th>
-              <th>Details</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {myToys?.map((toy, index) => {
-              const { sellerName, toyName, category, price, quantity, _id } =
-                toy;
+              const {
+                toyName,
+                category,
+                price,
+                quantity,
+                _id,
+                photo,
+                description,
+              } = toy;
               return (
                 <tr>
-                  <th>{index + 1}</th>
-                  <td>{sellerName}</td>
+                  <th className="z-0">{index + 1}</th>
+
                   <td>{toyName}</td>
                   <td>{category}</td>
                   <td>{price}</td>
                   <td>{quantity}</td>
                   <td>
+                    <Link to={`/update-toy/${_id}`}>
+                      <label htmlFor="my-modal-5" className="btn btn-xs mr-3">
+                        Edit
+                      </label>
+                    </Link>
+
                     <Link>
-                      <button className="btn btn-xs">Details</button>
+                      <button className="btn btn-xs">Delete</button>
                     </Link>
                   </td>
                 </tr>
