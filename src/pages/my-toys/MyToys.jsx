@@ -9,7 +9,7 @@ const MyToys = () => {
   console.log(user);
   const [myToys, setMyToys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/my-toys?email=${user?.email}`)
+    fetch(`https://toys-hub-server.vercel.app/my-toys?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -27,7 +27,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/delete-toy/${id}`, {
+        fetch(`https://toys-hub-server.vercel.app/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -41,8 +41,15 @@ const MyToys = () => {
       }
     });
   };
+  const hanleLowToHigh = () => {};
   return (
     <div className="my-20">
+      <div className="mb-7 flex justify-end gap-3">
+        <button className="btn btn-outline" onClick={hanleLowToHigh}>
+          See low to high
+        </button>
+        <button className="btn btn-outline">See high to low</button>
+      </div>
       <div className="overflow-x-auto ">
         <table className="table table-zebra w-full">
           {/* head */}

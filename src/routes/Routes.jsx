@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { ScrollRestoration, createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/register/Register";
@@ -11,6 +11,7 @@ import PrivetRoutes from "./PrivetRoutes";
 import AllToys from "../pages/all-toys/AllToys";
 import MyToys from "../pages/my-toys/MyToys";
 import UpdateToys from "../pages/my-toys/UpdateToys";
+import Blog from "../pages/blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/details/${params.id}`),
+          fetch(`https://toys-hub-server.vercel.app/details/${params.id}`),
       },
       {
         path: "/all-toys",
@@ -63,7 +64,11 @@ const router = createBrowserRouter([
         path: "/update-toy/:id",
         element: <UpdateToys></UpdateToys>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/single-toy/${params.id}`),
+          fetch(`https://toys-hub-server.vercel.app/single-toy/${params.id}`),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
     ],
   },
