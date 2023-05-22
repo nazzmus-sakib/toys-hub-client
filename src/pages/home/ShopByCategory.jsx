@@ -59,7 +59,12 @@ const ShopByCategory = () => {
         {categoryData.map((category) => {
           const { toyName, price, rating, photo, _id } = category;
           return (
-            <div className="card card-compact min-w-96 bg-base-100 shadow-xl ">
+            <div
+              data-aos="fade-up"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+              className="card card-compact min-w-96 bg-base-100 shadow-xl "
+            >
               <figure>
                 <img src={photo} alt="Shoes" className="h-[250px] w-full" />
               </figure>

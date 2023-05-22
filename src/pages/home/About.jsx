@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img from "../../assets/about.svg";
+import AOS from "aos";
 const About = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <h2 className="gradient-text lg:text-5xl text-3xl text-center my-10">
@@ -8,9 +12,20 @@ const About = () => {
       </h2>
       <div className="lg:flex gap-10">
         <div className="lg:w-1/2 mb-5 lg:mb-0 ">
-          <img src={img} alt="" />
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+            src={img}
+            alt=""
+          />
         </div>
-        <div className="lg:w-1/2 px-5 lg:px-0">
+        <div
+          className="lg:w-1/2 px-5 lg:px-0"
+          data-aos="fade-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000"
+        >
           <h3 className="text-3xl font-bold mb-3">
             Discover the Joy at Toy Hub
           </h3>

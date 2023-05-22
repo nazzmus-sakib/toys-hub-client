@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
 import { FaAngleRight, FaArrowRight } from "react-icons/fa";
 import img from "../../assets/banner.png";
 import img1 from "../../assets/img1.svg";
 import img2 from "../../assets/img2.svg";
 import img3 from "../../assets/img3.svg";
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="carousel w-full">
       <div id="slide1" className="carousel-item relative w-full">
         <img src={img} className="w-full lg:h-[600px]" />
         <div className="absolute flex lg:flex-row flex-col  py-14 lg:py-0 items-center lg:px-20 px-8  justify-center text-white">
-          <div className="lg:w-1/2 ">
+          <div
+            className="lg:w-1/2 "
+            data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+          >
             <h2 className="text-3xl lg:text-5xl font-bold mb-5  bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
               Adventure with our Enchanting Animal Toys and Playsets
             </h2>
