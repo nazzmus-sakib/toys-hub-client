@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ShowDetails = () => {
   const {
@@ -16,6 +17,9 @@ const ShowDetails = () => {
 
   return (
     <div className="lg:card lg:card-side bg-base-100 my-14">
+      <Helmet>
+        <title>Details | Toy-hub</title>
+      </Helmet>
       <figure className="lg:w-2/5 p-5 lg:p-0">
         <img src={photo} alt="img" className="lg:h-[400px] w-full rounded" />
       </figure>

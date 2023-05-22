@@ -4,6 +4,7 @@ import img from "../../assets/register.svg";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createUser, updateName, logOut, googleLogin } =
@@ -37,6 +38,9 @@ const Register = () => {
   };
   return (
     <div className="hero mb-24 ">
+      <Helmet>
+        <title>Sign-up | Toy-hub</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse lg:gap-40">
         <div className="text-center lg:text-left">
           <img src={img} alt="" className="mt-10 mb-5 lg:mt-0 lg:mb-5" />

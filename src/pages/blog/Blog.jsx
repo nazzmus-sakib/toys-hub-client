@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   return (
     <div className="grid grid-cols-1 gap-10 px-5 lg:px-[200px] mt-20 mb-5 blog">
+      <Helmet>
+        <title>Blog | Toy-hub</title>
+      </Helmet>
       <h2 className="text-4xl text-center gradient-text pb-2">Blog Page</h2>
 
       <div className="card  bg-base-100 shadow-xl">

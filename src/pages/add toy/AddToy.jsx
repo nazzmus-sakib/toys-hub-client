@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 const AddToy = () => {
   const { user } = useContext(AuthContext);
   const handleSubmit = (event) => {
@@ -48,6 +49,9 @@ const AddToy = () => {
   };
   return (
     <form class="lg:px-28 px-5 py-16" onSubmit={handleSubmit}>
+      <Helmet>
+        <title>Add-toy | Toy-hub</title>
+      </Helmet>
       <div className="lg:flex gap-5 my-4">
         <div class="form-control lg:w-1/2 w-full">
           <label class="label">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const AllToys = () => {
@@ -19,10 +20,13 @@ const AllToys = () => {
   };
   return (
     <div className="my-20">
+      <Helmet>
+        <title>All toys | Toy-hub</title>
+      </Helmet>
       <div className="flex justify-center gap-2 mb-10 px-5">
         <input
           type="text"
-          placeholder="search toy"
+          placeholder="search by toy name"
           className="input input-bordered w-full max-w-xs "
           onChange={handleChange}
         />

@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 const Login = () => {
   const { login, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -32,6 +33,9 @@ const Login = () => {
   };
   return (
     <div className="hero mb-24 mt-5 ">
+      <Helmet>
+        <title>Login | Toy-hub</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row gap-20">
         <div className="text-center lg:text-left">
           <img src={img} alt="" />

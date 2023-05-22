@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -48,6 +49,9 @@ const UpdateToys = () => {
 
   return (
     <div className="card-body">
+      <Helmet>
+        <title>Update-toy | Toy-hub</title>
+      </Helmet>
       <h2 className="text-4xl text-center my-10 gradient-text pb-2">
         Update Toy
       </h2>

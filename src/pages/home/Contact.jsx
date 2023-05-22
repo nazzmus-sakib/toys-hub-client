@@ -2,7 +2,7 @@ import React from "react";
 import img from "../../assets/contact.svg";
 const Contact = () => {
   return (
-    <div className="">
+    <div className="mb-10">
       <h2 className="gradient-text lg:text-5xl text-3xl text-center mt-10 pb-2">
         Contact with us!
       </h2>

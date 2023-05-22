@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import UpdateToys from "./UpdateToys";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -44,6 +45,9 @@ const MyToys = () => {
   const hanleLowToHigh = () => {};
   return (
     <div className="my-20">
+      <Helmet>
+        <title>My-toy | Toy-hub</title>
+      </Helmet>
       <div className="mb-7 flex justify-end gap-3 px-5 lg:px-0">
         <button className="btn btn-outline" onClick={hanleLowToHigh}>
           See low to high
