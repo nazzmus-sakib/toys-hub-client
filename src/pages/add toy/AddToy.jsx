@@ -11,7 +11,7 @@ const AddToy = () => {
     const form = event.target;
     const toyName = form.name.value;
     const category = form.category.value;
-    const price = form.price.value;
+    const price = parseInt(form.price.value);
     const photo = form.photo.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;

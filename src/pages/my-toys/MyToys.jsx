@@ -28,7 +28,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://toys-hub-server.vercel.app/${id}`, {
+        fetch(`https://toys-hub-server.vercel.app/delete-toy/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -42,17 +42,28 @@ const MyToys = () => {
       }
     });
   };
-  const hanleLowToHigh = () => {};
+  const handleLowToHigh = () => {
+    fetch(`https://toys-hub-server.vercel.app/low-to-high?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setMyToys(data));
+  };
+  const handleHighToLow = () => {
+    fetch(`https://toys-hub-server.vercel.app/high-to-low?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setMyToys(data));
+  };
   return (
     <div className="my-20">
       <Helmet>
         <title>My-toy | Toy-hub</title>
       </Helmet>
       <div className="mb-7 flex justify-end gap-3 px-5 lg:px-0">
-        <button className="btn btn-outline" onClick={hanleLowToHigh}>
+        <button className="btn btn-outline" onClick={handleLowToHigh}>
           See low to high
         </button>
-        <button className="btn btn-outline">See high to low</button>
+        <button className="btn btn-outline" onClick={handleHighToLow}>
+          See high to low
+        </button>
       </div>
       <div className="overflow-x-auto ">
         <table className="table table-zebra w-full">

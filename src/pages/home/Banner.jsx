@@ -20,7 +20,7 @@ const Banner = () => {
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1000"
           >
-            <h2 className="text-3xl lg:text-5xl font-bold mb-5  bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
+            <h2 className="text-3xl pb-2 lg:text-5xl font-bold mb-5  bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
               Adventure with our Enchanting Animal Toys and Playsets
             </h2>
             <p className="text-gray-400 text-sm lg:text-base">
@@ -56,7 +56,7 @@ const Banner = () => {
         <img src={img} className="w-full lg:h-[600px]" />
         <div className="absolute lg:flex items-center px-8 py-14 lg:py-0 lg:px-20  justify-center text-white">
           <div className="lg:w-1/2">
-            <h2 className="lg:text-5xl text-3xl font-bold mb-5 bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text">
+            <h2 className="lg:text-5xl pb-2 text-3xl font-bold mb-5 bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text">
               {" "}
               Embark on a Safari of Imagination with Amazing Animal Toys
             </h2>
@@ -93,7 +93,7 @@ const Banner = () => {
         <img src={img} className="w-full h-[600px]" />
         <div className="absolute flex items-center px-8 py-14 lg:py-0 lg:px-20  justify-center text-white">
           <div className="lg:w-1/2 w-full">
-            <h2 className="lg:text-5xl text-3xl font-bold mb-5 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-transparent bg-clip-text">
+            <h2 className="lg:text-5xl pb-2 text-3xl font-bold mb-5 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-transparent bg-clip-text">
               {" "}
               Unleash the Magic of the Animal Kingdom with our Toy Collection
             </h2>

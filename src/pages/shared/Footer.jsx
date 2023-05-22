@@ -55,7 +55,7 @@ const Footer = () => {
       <div>
         <span className="footer-title">Our Address</span>
         <p className="">Level-76, 14, Alal Market, Gulshan, Dhaka</p>
-        <p className="link link-hover">
+        <p className="">
           <span className="font-bold">Open:</span> (Sun - Thu, 10:00 AM to 6:00
           PM)
         </p>
