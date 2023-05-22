@@ -44,7 +44,7 @@ const MyToys = () => {
   const hanleLowToHigh = () => {};
   return (
     <div className="my-20">
-      <div className="mb-7 flex justify-end gap-3">
+      <div className="mb-7 flex justify-end gap-3 px-5 lg:px-0">
         <button className="btn btn-outline" onClick={hanleLowToHigh}>
           See low to high
         </button>
@@ -56,7 +56,6 @@ const MyToys = () => {
           <thead>
             <tr>
               <th></th>
-
               <th>Toy Name</th>
               <th>Sub-category</th>
               <th>Price</th>

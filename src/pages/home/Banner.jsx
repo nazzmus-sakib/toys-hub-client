@@ -8,14 +8,13 @@ const Banner = () => {
   return (
     <div className="carousel w-full">
       <div id="slide1" className="carousel-item relative w-full">
-        <img src={img} className="w-full h-[600px]" />
-        <div className="absolute flex items-center px-20  justify-center text-white">
-          <div className="w-1/2">
-            <h2 className="text-5xl font-bold mb-5  bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
-              {" "}
+        <img src={img} className="w-full lg:h-[600px]" />
+        <div className="absolute flex lg:flex-row flex-col  py-14 lg:py-0 items-center lg:px-20 px-8  justify-center text-white">
+          <div className="lg:w-1/2 ">
+            <h2 className="text-3xl lg:text-5xl font-bold mb-5  bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
               Adventure with our Enchanting Animal Toys and Playsets
             </h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-sm lg:text-base">
               Step into the enchanting world of Creatures of Wonder, where the
               magic of animals comes to life through our captivating collection
               of toys and playsets. Our mission is to inspire a deep
@@ -31,28 +30,28 @@ const Banner = () => {
               <FaAngleRight className="text-lg ml-2"></FaAngleRight>
             </button>
           </div>
-          <div className="w-1/2">
+          <div className="lg:w-1/2 hidden lg:block">
             <img src={img1} className="w-full" alt="" />
           </div>
         </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-3 right-3 top-1/2">
-          <a href="#3" className="btn btn-circle ">
+        <div className="absolute lg:flex hidden justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#3" className="btn   btn-circle btn-md ">
             ❮
           </a>
-          <a href="#slide2" className="btn btn-circle">
+          <a href="#slide2" className="btn   btn-circle btn-md ">
             ❯
           </a>
         </div>
       </div>
       <div id="slide2" className="carousel-item relative w-full">
-        <img src={img} className="w-full h-[600px]" />
-        <div className="absolute flex items-center px-20  justify-center text-white">
-          <div className="w-1/2">
-            <h2 className="text-5xl font-bold mb-5 bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text">
+        <img src={img} className="w-full lg:h-[600px]" />
+        <div className="absolute lg:flex items-center px-8 py-14 lg:py-0 lg:px-20  justify-center text-white">
+          <div className="lg:w-1/2">
+            <h2 className="lg:text-5xl text-3xl font-bold mb-5 bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text">
               {" "}
               Embark on a Safari of Imagination with Amazing Animal Toys
             </h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-sm lg:text-base">
               Step into the enchanting world of Creatures of Wonder, where the
               magic of animals comes to life through our captivating collection
               of toys and playsets. Our mission is to inspire a deep
@@ -63,33 +62,33 @@ const Banner = () => {
               toy is crafted with meticulous attention to detail, ensuring an
               authentic and engaging play experience for children of all ages.
             </p>
-            <button className="btn  bg-gradient-to-r from-sky-500 to-indigo-500 mt-4">
+            <button className="btn bg-gradient-to-r from-sky-500 to-indigo-500 mt-4">
               Explore more{" "}
               <FaAngleRight className="text-lg ml-2"></FaAngleRight>
             </button>
           </div>
-          <div className="w-1/2">
-            <img src={img2} className="w-full" alt="" />
+          <div className="lg:w-1/2">
+            <img src={img2} className="w-full hidden lg:block" alt="" />
           </div>
         </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" className="btn btn-circle">
+        <div className="absolute hidden lg:flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" className="btn  btn-circle  ">
             ❮
           </a>
-          <a href="#slide3" className="btn btn-circle">
+          <a href="#slide3" className="btn  btn-circle ">
             ❯
           </a>
         </div>
       </div>
       <div id="slide3" className="carousel-item relative w-full">
         <img src={img} className="w-full h-[600px]" />
-        <div className="absolute flex items-center px-20  justify-center text-white">
-          <div className="w-1/2">
-            <h2 className="text-5xl font-bold mb-5 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-transparent bg-clip-text">
+        <div className="absolute flex items-center px-8 py-14 lg:py-0 lg:px-20  justify-center text-white">
+          <div className="lg:w-1/2 w-full">
+            <h2 className="lg:text-5xl text-3xl font-bold mb-5 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-transparent bg-clip-text">
               {" "}
               Unleash the Magic of the Animal Kingdom with our Toy Collection
             </h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 lg:text-base text-sm">
               Step into the enchanting world of Creatures of Wonder, where the
               magic of animals comes to life through our captivating collection
               of toys and playsets. Our mission is to inspire a deep
@@ -105,15 +104,15 @@ const Banner = () => {
               <FaAngleRight className="text-lg ml-2"></FaAngleRight>
             </button>
           </div>
-          <div className="w-1/2">
+          <div className="lg:w-1/2 w-full hidden lg:block">
             <img src={img3} className="w-full" alt="" />
           </div>
         </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" className="btn btn-circle">
+        <div className="absolute hidden lg:flex justify-between transform -translate-y-1/2  left-5 right-5 top-1/2">
+          <a href="#slide2" className="btn  btn-circle ">
             ❮
           </a>
-          <a href="#slide1" className="btn btn-circle">
+          <a href="#slide1" className="btn  btn-circle  ">
             ❯
           </a>
         </div>

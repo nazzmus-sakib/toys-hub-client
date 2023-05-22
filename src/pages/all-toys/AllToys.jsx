@@ -13,13 +13,13 @@ const AllToys = () => {
     setSearchText(event.target.value);
   };
   const handleSearch = () => {
-    fetch(`https://toys-hub-server.vercel.app/${searchText}`)
+    fetch(`https://toys-hub-server.vercel.app/searchByToyName/${searchText}`)
       .then((res) => res.json())
       .then((data) => setToysData(data));
   };
   return (
     <div className="my-20">
-      <div className="flex justify-center gap-2 mb-10">
+      <div className="flex justify-center gap-2 mb-10 px-5">
         <input
           type="text"
           placeholder="search toy"

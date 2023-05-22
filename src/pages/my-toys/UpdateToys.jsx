@@ -52,7 +52,7 @@ const UpdateToys = () => {
         Update Toy
       </h2>
       <form onSubmit={handleUpdate}>
-        <div className="flex gap-10 ">
+        <div className="lg:flex  gap-10 ">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Name</span>
@@ -76,7 +76,7 @@ const UpdateToys = () => {
             />
           </div>
         </div>
-        <div className="flex gap-10">
+        <div className="lg:flex  gap-10">
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text">Quantity</span>

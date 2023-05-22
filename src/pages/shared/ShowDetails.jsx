@@ -15,11 +15,11 @@ const ShowDetails = () => {
   } = useLoaderData();
 
   return (
-    <div className="card card-side bg-base-100 my-14">
-      <figure className="1/2">
+    <div className="lg:card lg:card-side bg-base-100 my-14">
+      <figure className="lg:w-2/5 p-5 lg:p-0">
         <img src={photo} alt="img" className="h-[400px] w-full rounded" />
       </figure>
-      <div className="card-body flex-grow-0 w-1/2">
+      <div className="card-body flex-grow-0 lg:w-3/5">
         <h2 className="card-title text-[26px] mb-5">{toyName}</h2>
         <span className="text-lg ">
           <span className="font-bold ">Price:</span> ${price}

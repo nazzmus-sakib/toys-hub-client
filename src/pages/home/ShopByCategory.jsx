@@ -19,13 +19,13 @@ const ShopByCategory = () => {
     }
   };
   return (
-    <div>
-      <h2 className="text-5xl gradient-text text-center mb-10 pb-3">
+    <div className="px-5 lg:px-0">
+      <h2 className="lg:text-5xl text-3xl gradient-text text-center mb-10 pb-3">
         Shop By category
       </h2>
-      <div className="flex gap-3">
+      <div className="flex gap-3 flex-wrap">
         <div
-          className={`tabBtn ${
+          className={`tabBtn lg:px-6 lg:py-3 px-3 py-2 ${
             activeTab === "teddy-bear"
               ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
               : ""
@@ -35,7 +35,7 @@ const ShopByCategory = () => {
           Teddy Bear Toys
         </div>
         <div
-          className={`tabBtn  ${
+          className={`tabBtn lg:px-6 lg:py-3 px-3 py-2 ${
             activeTab === "horse"
               ? " bg-gradient-to-r from-cyan-500 to-blue-500  text-white"
               : ""
@@ -45,7 +45,7 @@ const ShopByCategory = () => {
           Horse Toys
         </div>
         <div
-          className={`tabBtn ${
+          className={`tabBtn lg:px-6 lg:py-3 px-3 py-2 ${
             activeTab === "dogs"
               ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
               : ""
@@ -55,7 +55,7 @@ const ShopByCategory = () => {
           Dog Toys
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-10 mt-10">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 mt-10">
         {categoryData.map((category) => {
           const { toyName, price, rating, photo, _id } = category;
           return (

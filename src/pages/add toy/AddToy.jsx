@@ -47,9 +47,9 @@ const AddToy = () => {
       });
   };
   return (
-    <form class="px-28 py-16" onSubmit={handleSubmit}>
-      <div className="flex gap-5 my-4">
-        <div class="form-control w-1/2">
+    <form class="lg:px-28 px-5 py-16" onSubmit={handleSubmit}>
+      <div className="lg:flex gap-5 my-4">
+        <div class="form-control lg:w-1/2 w-full">
           <label class="label">
             <span class="label-text">Toy Name</span>
           </label>
@@ -57,11 +57,11 @@ const AddToy = () => {
             name="name"
             type="text"
             placeholder="name"
-            class="input input-bordered "
+            class="input input-bordered w-full"
             required
           />
         </div>
-        <div class="form-control w-1/2">
+        <div class="form-control lg:w-1/2 w-full">
           <label class="label">
             <span class="label-text">Photo URL</span>
           </label>
@@ -74,8 +74,8 @@ const AddToy = () => {
           />
         </div>
       </div>
-      <div className="flex gap-5 my-4">
-        <div class="form-control w-1/2">
+      <div className="lg:flex gap-5 my-4">
+        <div class="form-control lg:w-1/2 w-full">
           <label class="label">
             <span class="label-text">Category</span>
           </label>
@@ -92,7 +92,7 @@ const AddToy = () => {
             <option value="horse">Horse</option>
           </select>
         </div>
-        <div class="form-control w-1/2">
+        <div class="form-control lg:w-1/2 w-full">
           <label class="label">
             <span class="label-text">Price</span>
           </label>
@@ -105,8 +105,8 @@ const AddToy = () => {
           />
         </div>
       </div>
-      <div className="flex gap-5 my-4">
-        <div class="form-control w-1/2">
+      <div className="lg:flex gap-5 my-4">
+        <div class="form-control lg:w-1/2 w-full">
           <label class="label">
             <span class="label-text">Rating</span>
           </label>
@@ -115,10 +115,10 @@ const AddToy = () => {
             name="rating"
             type="text"
             placeholder="Ratings"
-            class="input input-bordered "
+            class="input input-bordered w-full"
           />
         </div>
-        <div class="form-control w-1/2">
+        <div class="form-control lg:w-1/2 w-full">
           <label class="label">
             <span class="label-text">Available quantity</span>
           </label>
@@ -131,7 +131,7 @@ const AddToy = () => {
           />
         </div>
       </div>
-      <div className="flex gap-5 my-4">
+      <div className="lg:flex gap-5 my-4">
         <div class="form-control w-full">
           <label class="label">
             <span class="label-text">Description</span>

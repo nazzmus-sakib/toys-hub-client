@@ -37,9 +37,9 @@ const Register = () => {
   };
   return (
     <div className="hero mb-24 ">
-      <div className="hero-content flex-col lg:flex-row-reverse gap-40">
+      <div className="hero-content flex-col lg:flex-row-reverse lg:gap-40">
         <div className="text-center lg:text-left">
-          <img src={img} alt="" />
+          <img src={img} alt="" className="mt-10 mb-5 lg:mt-0 lg:mb-5" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm  border-2 bg-base-100">
           <div className="card-body">

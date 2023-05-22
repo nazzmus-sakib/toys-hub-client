@@ -3,14 +3,14 @@ import img from "../../assets/about.svg";
 const About = () => {
   return (
     <div>
-      <h2 className="gradient-text text-5xl text-center my-10">
+      <h2 className="gradient-text lg:text-5xl text-3xl text-center my-10">
         More About us!
       </h2>
-      <div className="flex gap-10">
-        <div className="w-1/2">
+      <div className="lg:flex gap-10">
+        <div className="lg:w-1/2 mb-5 lg:mb-0 ">
           <img src={img} alt="" />
         </div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2 px-5 lg:px-0">
           <h3 className="text-3xl font-bold mb-3">
             Discover the Joy at Toy Hub
           </h3>
