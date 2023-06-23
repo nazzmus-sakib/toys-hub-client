@@ -94,7 +94,7 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <FaUserCircle className="lg:text-5xl text-4xl"></FaUserCircle>
+          <FaUserCircle className="lg:text-5xl text-4xl mr-2"></FaUserCircle>
         )}
       </div>
     </div>
